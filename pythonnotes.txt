@@ -1,0 +1,75 @@
+#data types 
+
+#String = String of characters and needs "" You can pull subscript with []
+# print("Hello"[0]) -- this would pull the H 
+
+#Integer = whole numbers 
+# print(5 + 5) -- this would return 10
+
+#FLoat = numbers with decimals ex. 3.14
+
+#Boolean = True or False 
+-----------------------------------------------------------------------------------------------------------
+
+Practice 1 - Double digit 
+
+#create an input to collect a 2 digit number and then display the sum of the 2 number
+
+number = input("What is a random two digit number?")
+
+number_1 = int(number[0])
+number_2 = int(number[1])
+
+print(number_1 + number_2)
+
+-----------------------------------------------------------------------------------------------------------
+
+Math in python
+3 + 5
+7 - 4
+3 * 2 
+6 / 3   -- always returns a float instead of an Integer
+2 ** 3  -- exponets
+
+Operates in PEMDAS order [left to right]
+
+      1st  3rd  2nd  4th
+print(3 * 3 + 3 / 3 - 3)
+
+-----------------------------------------------------------------------------------------------------------
+
+Practice 2 - BMI Calculator 
+
+#create an input to collect weight and height, then use the inputs to calculate BMI
+#BMI = weight / height^2
+
+weight = input("Whats is your current weight in kilograms? \n")
+height = input("What is your height in meters\n")
+
+weight_result = float(weight)
+height_result = float(height) * float(height)
+
+bmi = weight_result / height_result
+bmi_result = str(bmi)[0] + str(bmi)[1]
+
+print("Your BMI is currently " + bmi_result + "%.")
+
+-----------------------------------------------------------------------------------------------------------
+
+the round function will round based on a set prescion 
+ex print (round(6 / 4, 6))
+
+floor division will also return and intger [ 8 // 3 ]
+
+you can manipluate by 1 using += | -+ | /+ | *= 
+
+#f-string - allows you to print various data types
+score = 0
+height = 1.8
+isWinning = True 
+
+print(f"your score is {score}, your height is {height}, you are winning is {isWinning}")
+
+-----------------------------------------------------------------------------------------------------------
+
+Practice 3 -Your Life in Weeks
