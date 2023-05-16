@@ -1,34 +1,33 @@
-#create a program to tell us our cost for a pizza
-# s = 15  pepperoni = 2
-# m = 20  pepperoni = 3
-# L = 25  pepperoni = 3
-# extra cheese is 1
+#build a love calculator that counts the time the letters in TRUE LOVE are in the names
 
-print("Welcome to python pizza.")
-size = input("What size pizza would you like, s, m or l? \n")
-pepperoni = input("Would you like to add pepperoni? Y or N \n")
-cheese = input("Would you like to adde extra cheese? Y or N \n")
-bill = 0 
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
 
-if size == "s":
-    bill = 15
-    if pepperoni == "y":
-        bill += 2
-    if cheese == "y":
-        bill += 1 
+first = name1.lower()
+second = name2.lower()
 
-if size == "m":
-    bill = 20
-    if pepperoni == "y":
-        bill += 3
-    if cheese == "y":
-        bill += 1 
+names = first + second
 
-if size == "l":
-    bill = 25
-    if pepperoni == "y":
-        bill += 3
-    if cheese == "y":
-        bill += 1 
+t1 = names.count("t")
+r1 = names.count("r") 
+u1 = names.count("u")
+e1 = names.count("e")
 
-print(f"Your final bill is: ${bill}")
+true = t1 + r1 + u1 + e1
+
+l2 = names.count("l")
+o2 = names.count("o") 
+v2 = names.count("v")
+e2 = names.count("e")
+
+love = l2 + o2 + v2 + e2
+
+love_score = str(true) + str(love)
+love_int = int(love_score)
+if love_int < 10 or love_int > 90:
+    print(f"Your score is {love_score}, good luck!")
+elif love_int >= 40 and love_int <= 50:
+    print(f"Your score is {love_score}, you'll be alright")
+else:
+    print(f"Your score is {love_score}")
+
