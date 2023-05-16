@@ -109,3 +109,118 @@ total_per_person = meal_total / total_people
 print(f"Each person will have to pay {round(total_per_person, 2)}")
 
 -----------------------------------------------------------------------------------------------------------
+
+using if statements for even or odd numbers
+
+#create a program to tell us whether an inputted number is odd or even 
+print("Weclome to the odd or even number test")
+
+user_input = int(input("What is your favorite number?"))
+
+number_value = user_input % 2 #the % always returns the remainder
+if number_value == 0:
+    print("Your number is an even number.")
+else:
+    print("Your number is an odd number.")
+
+-----------------------------------------------------------------------------------------------------------
+
+using nested if / else statements 
+you can add elif inbetween the if and else 
+
+if condition:
+      if another condition:
+            do this
+      else:
+            do this 
+else:
+      do this
+
+-----------------------------------------------------------------------------------------------------------
+
+Practice 5 - Updated BMI calculator
+
+#create a program to tell us our bmi and weight status
+
+#BMI = weight / height^2
+
+weight = input("Whats is your current weight in kilograms? \n")
+height = input("What is your height in meters\n")
+
+weight_result = float(weight)
+height_result = float(height) * float(height)
+
+bmi = weight_result / height_result
+bmi_result = str(bmi)[0] + str(bmi)[1]
+
+if bmi <= 18.5:
+    print(f"Your BMI is currently {bmi_result} and you are underweight.")
+elif bmi <= 25:
+    print(f"Your BMI is currently {bmi_result} and you are normal weight.")
+elif bmi <= 30:
+    print(f"Your BMI is currently {bmi_result} and you are overweight.")
+elif bmi <= 35:
+    print(f"Your BMI is currently {bmi_result} and you are obese.")
+else:
+    print(f"Your BMI is currently {bmi_result} and you are clinically obese.")
+
+-----------------------------------------------------------------------------------------------------------
+
+Practice 6 - Leap year calculator
+
+#create a program to tell us whether a year is a leap year or not
+# is evenly divisble by 4
+# not evenly divisble by 100
+# is evenly divisble by 400
+
+year = int(input("What is the year you were born?"))
+
+year_4 = year % 4
+year_100 = year % 100
+year_400 = year % 400
+
+if year_4 == 0:
+   year_100 > 0
+   year_400 == 0
+   print("This is a leap year.")
+else:
+    print("This is not a leap year.")
+
+-----------------------------------------------------------------------------------------------------------
+
+Practice 7 - Pizza calculator
+
+#create a program to tell us our cost for a pizza
+# s = 15  pepperoni = 2
+# m = 20  pepperoni = 3
+# L = 25  pepperoni = 3
+# extra cheese is 1
+
+print("Welcome to python pizza.")
+size = input("What size pizza would you like, s, m or l? \n")
+pepperoni = input("Would you like to add pepperoni? Y or N \n")
+cheese = input("Would you like to adde extra cheese? Y or N \n")
+bill = 0 
+
+if size == "s":
+    bill = 15
+    if pepperoni == "y":
+        bill += 2
+    if cheese == "y":
+        bill += 1 
+
+if size == "m":
+    bill = 20
+    if pepperoni == "y":
+        bill += 3
+    if cheese == "y":
+        bill += 1 
+
+if size == "l":
+    bill = 25
+    if pepperoni == "y":
+        bill += 3
+    if cheese == "y":
+        bill += 1 
+
+print(f"Your final bill is: ${bill}")

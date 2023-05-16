@@ -1,14 +1,34 @@
-#create a tip calculator 
+#create a program to tell us our cost for a pizza
+# s = 15  pepperoni = 2
+# m = 20  pepperoni = 3
+# L = 25  pepperoni = 3
+# extra cheese is 1
 
-total_bill = float(input("What was the total of the bill? \n"))
+print("Welcome to python pizza.")
+size = input("What size pizza would you like, s, m or l? \n")
+pepperoni = input("Would you like to add pepperoni? Y or N \n")
+cheese = input("Would you like to adde extra cheese? Y or N \n")
+bill = 0 
 
-percent_tip = float(input("What percentage of tip would you like to leave? \n"))
-tip = percent_tip / 100
-tip_total = tip * total_bill
-meal_total = total_bill + tip_total
+if size == "s":
+    bill = 15
+    if pepperoni == "y":
+        bill += 2
+    if cheese == "y":
+        bill += 1 
 
-total_people = int(input("How many people will split the bill? \n"))
+if size == "m":
+    bill = 20
+    if pepperoni == "y":
+        bill += 3
+    if cheese == "y":
+        bill += 1 
 
-total_per_person = meal_total / total_people
- 
-print(f"Each person will have to pay {round(total_per_person, 2)}")
+if size == "l":
+    bill = 25
+    if pepperoni == "y":
+        bill += 3
+    if cheese == "y":
+        bill += 1 
+
+print(f"Your final bill is: ${bill}")
