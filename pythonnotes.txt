@@ -264,3 +264,77 @@ else:
 
 -----------------------------------------------------------------------------------------------------------
 
+Randomisation - 
+#create a coin toss 1 = head 0 = tails
+import random
+
+flip = random.randint(0,1)
+
+if flip == 0:
+    print("The coin landed on tails.")
+else: 
+    print("the coin landed on heads.")
+
+------------------------------------------------------------------------------------------------------------
+
+List = data structures 
+ex. fruits = [apples, banana, orange]
+
+example = banker roulette
+
+#banker roulette
+import random
+
+names_string = input("Enter names with a , seperating names.")
+
+names = names_string.split(", ")
+name_count = len(names)
+
+print(f"{names[random.randint(0, name_count - 1)]} will pay the bill.")
+
+example = treasure map
+
+#treasue map
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+
+c = int(position[0])
+r = int(position[1])
+
+map[c-1][r-1] = "x"
+
+print(f"{row1}\n{row2}\n{row3}")
+
+____________________________________________________________________________________________
+
+Practice 9 - rocka paper scissor game
+
+#rock, paper, scissors
+import random
+
+# rock = 0, paper = 1, scissors = 2
+user_move = int(input("Select 1 of the following moves, rock = 0, paper = 1, scissors = 2. \n"))
+
+computer_move = random.randint(0, 2)
+
+if user_move < 0 or user_move >= 3:
+ print("You've selected an invalid option.")
+
+if user_move == 0 and computer_move == 2:
+    print("you win.")
+elif user_move == 1 and computer_move == 0:
+    print("you win.")
+elif user_move == 2 and computer_move == 1:
+    print("you win.")
+elif user_move == 2 and computer_move == 0:
+    print("you lose.")
+elif user_move == 0 and computer_move == 1:
+    print("you lose.")
+elif user_move == 1 and computer_move == 2:
+    print("you lose.")
+elif user_move == computer_move:
+    print("its a tie")

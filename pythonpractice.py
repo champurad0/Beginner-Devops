@@ -1,33 +1,53 @@
-#build a love calculator that counts the time the letters in TRUE LOVE are in the names
+#rock, paper, scissors
+import random
 
-name1 = input("What is your name? \n")
-name2 = input("What is their name? \n")
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-first = name1.lower()
-second = name2.lower()
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
 
-names = first + second
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
-t1 = names.count("t")
-r1 = names.count("r") 
-u1 = names.count("u")
-e1 = names.count("e")
+moves = [rock, paper, scissors]
+# rock = 0, paper = 1, scissors = 2
+user_move = int(input("Select 1 of the following moves, rock = 0, paper = 1, scissors = 2. \n"))
 
-true = t1 + r1 + u1 + e1
+computer_move = random.randint(0, 2)
 
-l2 = names.count("l")
-o2 = names.count("o") 
-v2 = names.count("v")
-e2 = names.count("e")
+if user_move < 0 or user_move >= 3:
+ print("You've selected an invalid option.")
 
-love = l2 + o2 + v2 + e2
-
-love_score = str(true) + str(love)
-love_int = int(love_score)
-if love_int < 10 or love_int > 90:
-    print(f"Your score is {love_score}, good luck!")
-elif love_int >= 40 and love_int <= 50:
-    print(f"Your score is {love_score}, you'll be alright")
-else:
-    print(f"Your score is {love_score}")
-
+if user_move == 0 and computer_move == 2:
+    print("you win.")
+elif user_move == 1 and computer_move == 0:
+    print("you win.")
+elif user_move == 2 and computer_move == 1:
+    print("you win.")
+elif user_move == 2 and computer_move == 0:
+    print("you lose.")
+elif user_move == 0 and computer_move == 1:
+    print("you lose.")
+elif user_move == 1 and computer_move == 2:
+    print("you lose.")
+elif user_move == computer_move:
+    print("its a tie")
