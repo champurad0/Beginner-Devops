@@ -1,53 +1,19 @@
-#rock, paper, scissors
-import random
+#ceasers cipher code
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
+#direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
 
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
 
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
+def encrypt(shift_amount, plain_text):
+    cipher_text = ""
+    for letter in plain_text:
+        position = alphabet.index(letter)
+        new_position = position + shift_amount
+        new_letter = alphabet[new_position]
+        cipher_text += new_letter
+    print(f'the encoded text is {cipher_text}')
 
-moves = [rock, paper, scissors]
-# rock = 0, paper = 1, scissors = 2
-user_move = int(input("Select 1 of the following moves, rock = 0, paper = 1, scissors = 2. \n"))
+print(encrypt(shift_amount=shift, plain_text=text))
 
-computer_move = random.randint(0, 2)
-
-if user_move < 0 or user_move >= 3:
- print("You've selected an invalid option.")
-
-if user_move == 0 and computer_move == 2:
-    print("you win.")
-elif user_move == 1 and computer_move == 0:
-    print("you win.")
-elif user_move == 2 and computer_move == 1:
-    print("you win.")
-elif user_move == 2 and computer_move == 0:
-    print("you lose.")
-elif user_move == 0 and computer_move == 1:
-    print("you lose.")
-elif user_move == 1 and computer_move == 2:
-    print("you lose.")
-elif user_move == computer_move:
-    print("its a tie")

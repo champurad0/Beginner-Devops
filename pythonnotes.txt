@@ -338,3 +338,51 @@ elif user_move == 1 and computer_move == 2:
     print("you lose.")
 elif user_move == computer_move:
     print("its a tie")
+
+____________________________________________________________________________________________
+
+
+def greet():
+    print("hello")
+    print("world")
+    print ("chinga su madre")
+
+def greet_with_name(name):
+    print(f"Hello {name}")
+    print(f"How do you do {name}")
+
+def greet_with(name, location):
+    print(f"Hello {name}")
+    print(f"How is {location} nowadays?")
+
+#Write your code below this line 👇
+import math
+def paint_calc(height, width, cover):
+    number_of_cans = math.ceil((height * width) / cover)
+    print(f"You will need {number_of_cans} can of paint.")
+#Write your code above this line 👆
+# Define a function called paint_calc() so that the code below works.   
+
+# 🚨 Don't change the code below 👇
+test_h = int(input("Height of wall: "))
+test_w = int(input("Width of wall: "))
+coverage = 5
+paint_calc(height=test_h, width=test_w, cover=coverage)
+
+------------------------------------------------------------------------------------------------
+
+Practice - Primer number checker
+
+#primer number checker
+def prime_checker(number):
+    results = []
+    for x in range(2, number):
+        results.append(n % x)
+    print(results)
+    if not any(results):
+        print("This is not a prime number.")
+    else:
+        print("This is a prime number")
+
+n = int(input("Check this number: "))
+prime_checker(number=n)
